@@ -1,37 +1,37 @@
 {% set version = "4.4" %}
 
 package:
-    name: humanfriendly
-    version: {{ version }}
+  name: humanfriendly
+  version: {{ version }}
 
 source:
-    fn: humanfriendly-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
-    sha256: 2e1d9a4162a75156e588ed8dddb3b84fb8b99aa39c522bf1c97d2cfd721c42e5
+  fn: humanfriendly-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
+  sha256: 2e1d9a4162a75156e588ed8dddb3b84fb8b99aa39c522bf1c97d2cfd721c42e5
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
-    entry_points:
-        - humanfriendly = humanfriendly.cli:main
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+  entry_points:
+    - humanfriendly = humanfriendly.cli:main
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
+  build:
+    - python
+    - setuptools
+  run:
+    - python
 
 test:
-    imports:
-        - humanfriendly
-    commands:
-        - humanfriendly --help  # [not osx]
+  imports:
+    - humanfriendly
+  commands:
+    - humanfriendly --help  # [not osx]
 
 about:
-    home: https://humanfriendly.readthedocs.org
-    license: MIT
-    summary: 'Human friendly output for text interfaces using Python.'
+  home: https://humanfriendly.readthedocs.org
+  license: MIT
+  summary: 'Human friendly output for text interfaces using Python.'
   description: |
     The functions and classes in the humanfriendly package can be used to make text interfaces more user friendly. 
   doc_url: https://humanfriendly.readthedocs.io/en/latest/
@@ -39,5 +39,5 @@ about:
   doc_source_url: https://github.com/xolox/python-humanfriendly/tree/master/docs
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
+  recipe-maintainers:
+    - ocefpaf
