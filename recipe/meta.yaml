@@ -1,4 +1,4 @@
-{% set version = "4.4" %}
+{% set version = "4.4.1" %}
 
 package:
   name: humanfriendly
@@ -7,7 +7,7 @@ package:
 source:
   fn: humanfriendly-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
-  sha256: 2e1d9a4162a75156e588ed8dddb3b84fb8b99aa39c522bf1c97d2cfd721c42e5
+  sha256: f1ebb406d37478228b92543c12c27c9a827782d8d241260b3a06512c7f7c3a5e
 
 build:
   number: 0
@@ -16,7 +16,7 @@ build:
     - humanfriendly = humanfriendly.cli:main
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
   run:
@@ -26,7 +26,9 @@ test:
   imports:
     - humanfriendly
   commands:
-    - humanfriendly --help  # [not osx]
+    # the build workers do not have a fully functional terminal which hangs
+    # which command.
+    - humanfriendly --help  # [not unix]
 
 about:
   home: https://humanfriendly.readthedocs.org
