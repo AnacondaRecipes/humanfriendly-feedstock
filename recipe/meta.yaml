@@ -25,6 +25,10 @@ requirements:
 test:
   imports:
     - humanfriendly
+  commands:
+    # the build workers do not have a fully functional terminal which hangs
+    # which command.
+    - humanfriendly --help  # [not unix]
 
 about:
   home: https://humanfriendly.readthedocs.org
