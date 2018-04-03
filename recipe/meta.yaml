@@ -15,7 +15,7 @@ build:
     - humanfriendly = humanfriendly.cli:main
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
