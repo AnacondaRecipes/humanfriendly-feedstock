@@ -18,6 +18,8 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
   run:
     - python
     - pyreadline  # [win]
@@ -37,6 +39,7 @@ test:
 about:
   home: https://humanfriendly.readthedocs.org
   license: MIT
+  license_family: MIT
   license_file: LICENSE.txt
   summary: 'Human friendly output for text interfaces using Python.'
   description: |
