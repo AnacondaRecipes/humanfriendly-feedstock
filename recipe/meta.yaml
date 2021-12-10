@@ -22,8 +22,9 @@ requirements:
     - wheel
   run:
     - python
-    - pyreadline  # [win]
     - monotonic  # [py2k]
+    - pyreadline  # [win and py<38]
+    - pyreadline3  # [win and py>=38]
 
 test:
   imports:
