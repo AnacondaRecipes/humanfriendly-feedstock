@@ -9,7 +9,7 @@ source:
   sha256: 6b0b831ce8f15f7300721aa49829fc4e83921a9a301cc7f606be6686a2288ddc
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - humanfriendly = humanfriendly.cli:main
@@ -38,10 +38,11 @@ test:
     - humanfriendly --help  # [not unix]
 
 about:
-  home: https://humanfriendly.readthedocs.org
+  home: https://humanfriendly.readthedocs.io
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
+  license_url: https://github.com/xolox/python-humanfriendly/blob/master/LICENSE.txt
   summary: 'Human friendly output for text interfaces using Python.'
   description: |
     The functions and classes in the humanfriendly package can be used to make text interfaces more user friendly. 
