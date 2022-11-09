@@ -42,15 +42,16 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  license_url: https://github.com/xolox/python-humanfriendly/blob/master/LICENSE.txt
   summary: 'Human friendly output for text interfaces using Python.'
   description: |
     The functions and classes in the humanfriendly package can be used to make text interfaces more user friendly. 
   doc_url: https://humanfriendly.readthedocs.io/en/latest/
   dev_url: https://github.com/xolox/python-humanfriendly
-  doc_source_url: https://github.com/xolox/python-humanfriendly/tree/master/docs 
 
 extra:
   recipe-maintainers:
     - ocefpaf
     - ccordoba12
+  skip-lints:
+    - missing_license_url
+    - missing_doc_source_url
