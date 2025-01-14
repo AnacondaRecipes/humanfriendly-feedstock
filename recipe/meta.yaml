@@ -7,14 +7,19 @@ package:
 source:
   url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
   sha256: 6b0b831ce8f15f7300721aa49829fc4e83921a9a301cc7f606be6686a2288ddc
+  patches:
+    - 0001-Replace-pipes.quote-with-shlex.quote-on-Python-3.patch
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 2
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   entry_points:
     - humanfriendly = humanfriendly.cli:main
 
 requirements:
+  build:
+    - patch     # [unix]
+    - m2-patch  # [win]
   host:
     - python
     - pip
@@ -45,7 +50,7 @@ about:
   summary: 'Human friendly output for text interfaces using Python.'
   description: |
     The functions and classes in the humanfriendly package can be used to make text interfaces more user friendly. 
-  doc_url: https://humanfriendly.readthedocs.io/en/latest/
+  doc_url: https://humanfriendly.readthedocs.io/
   dev_url: https://github.com/xolox/python-humanfriendly
 
 extra:
