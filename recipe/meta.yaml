@@ -11,15 +11,12 @@ source:
     - 0001-Replace-pipes.quote-with-shlex.quote-on-Python-3.patch
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   entry_points:
     - humanfriendly = humanfriendly.cli:main
 
 requirements:
-  build:
-    - patch     # [unix]
-    - m2-patch  # [win]
   host:
     - python
     - pip
